@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Army #</th>
+        <th scope="col">Soldier #</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let battle of battles">
+        <td>{{ battle.description }}</td>
+        <td>{{ battle.armyTotal }}</td>
+        <td>{{ battle.soldierTotal }}</td>
+        <td><li class="list-inline-item"><a routerLink="/addarmy/{{ battle.id }}" class="btn btn-info">Add Army</a></li></td>
+        <td><li class="list-inline-item"><a routerLink="/addcombatant/{{ battle.id }}" class="btn btn-info">Add Combatant</a></li></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
