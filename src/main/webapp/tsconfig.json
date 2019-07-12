@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "xhr-error-reporting": [
+        "dist/xhr-error-reporting"
+      ],
+      "xhr-error-reporting/*": [
+        "dist/xhr-error-reporting/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

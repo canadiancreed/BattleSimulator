@@ -6,8 +6,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BattleService {
 
-  private battlesListUrl: string;
-  private battlesSaveUrl: string;
+  private readonly battlesListUrl: string;
+  private readonly battlesSaveUrl: string;
 
   constructor(private http: HttpClient) {
     this.battlesListUrl = 'http://localhost:8080/battles/list';
@@ -19,7 +19,7 @@ export class BattleService {
   }
 
   public save(battle: Battle) {
-    return this.http.post<Battle>(this.battlesSaveUrl, battle);
+    return this.http.post(this.battlesSaveUrl, battle, {responseType: 'text'});
   }
 
   public delete(battle: Battle) {
