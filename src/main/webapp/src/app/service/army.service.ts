@@ -6,17 +6,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ArmyService {
 
-  private armysUrl: string;
+    private readonly armiesListUrl: string;
+    private readonly armiesSaveUrl: string;
 
-  constructor(private http: HttpClient) {
-    this.armysUrl = 'http://localhost:8080/armys/list';
-  }
+    constructor(private http: HttpClient) {
+        this.armiesListUrl = 'http://localhost:8080/armies/list';
+        this.armiesSaveUrl = 'http://localhost:8080/armies/add';
+    }
 
   public findAll(): Observable<Army[]> {
-    return this.http.get<Army[]>(this.armysUrl);
+    return this.http.get<Army[]>(this.armiesListUrl);
   }
 
-  public save(user: Army) {
-    return this.http.post<Army>(this.armysUrl, user);
+  public save(army: Army) {
+    return this.http.post(this.armiesSaveUrl, army, {responseType: 'text'});
   }
 }

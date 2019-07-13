@@ -18,6 +18,9 @@ public class Army {
     @ApiModelProperty(notes = "The army name")
     private String armyName;
 
+    @ApiModelProperty(notes = "Amount of combatants in army")
+    private String combatantTotal;
+
     public int getId() {
         return id;
     }
@@ -33,4 +36,8 @@ public class Army {
     public void setArmyName(final String armyName) {
         this.armyName = armyName;
     }
+
+    public String getCombatantTotal() { return combatantTotal; }
+
+    public void setCombatantTotal(final String combatantTotal) { this.combatantTotal = combatantTotal; }
 }

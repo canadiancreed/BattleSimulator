@@ -1,1 +1,21 @@
-<p>army-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Army Name</th>
+                <th scope="col">Combatant #</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let army of armies">
+                <td>{{ army.armyName }}</td>
+                <td>{{ army.combatantTotal }}</td>
+                <td><li class="list-inline-item"><a routerLink="/addcombatant/{{ army.id }}" class="btn btn-info">Add Combatant</a></li></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -65,6 +65,7 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         Army armyOne = new Army();
 
         armyOne.setArmyName("One");
+        armyOne.setCombatantTotal(String.valueOf(100));
 
         armyRepository.save(armyOne);
 
@@ -73,6 +74,7 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         Army armyTwo = new Army();
 
         armyTwo.setArmyName("Two");
+        armyTwo.setCombatantTotal(String.valueOf(50));
 
         armyRepository.save(armyTwo);
 
